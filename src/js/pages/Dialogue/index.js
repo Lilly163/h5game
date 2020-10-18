@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import './styleDialogue.css'
 import Images from '../../utils/Images'
-import {Button} from 'antd-mobile'
 const chatList = [
     {id:'1',value:'你好，我是财神'},
     {id:'2',value:'感谢互联网技术和5G'},
@@ -9,6 +8,28 @@ const chatList = [
     {id:'4',value:'请回复你希望的中奖金额，点击“发送”，本神将为你转接<span>天庭身份管理办事处'},
 ]
 export default class componentName extends Component {
+    state = {
+        count :0
+    }
+    countFocus=()=>{
+        document.querySelector('.pointer').style.display='none'
+    }
+    countBlur=()=>{
+        setTimeout(() => {
+            document.querySelector('.pointer').style.display='block'
+        }, 30);
+    }
+    countChange=(e)=>{
+        let value=e.target.value
+        console.log(value)
+        this.setState({
+            count : value
+        })
+    }
+    send=()=>{
+       let value = this.state.count
+       this.props.history.push('/infomation');
+    }
   render() {
     return (
       <div className='dialogue'>
@@ -36,9 +57,9 @@ export default class componentName extends Component {
                   <img src={Images.chat_voice} alt=""/>
               </div>
               <div className='input-box'>
-                  <input type="text"/>
+                  <input type="number" onFocus={this.countFocus} onBlur={this.countBlur} onChange={this.countChange}/>
               </div>
-              <div className='btn-sure'>
+              <div className='btn-sure' onClick={this.send}>
                  发送
               </div>
            </div>

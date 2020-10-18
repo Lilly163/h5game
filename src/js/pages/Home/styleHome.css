@@ -9,7 +9,34 @@
     background: url('../../../assets/home-bgjpg.jpg') no-repeat;
     background-size: 100%;
 }
-
+.pagehome .clond-left {
+    position: absolute;
+    z-index: 100;
+    top: 10px;
+}
+.pagehome .clond-left img{
+    width: 130px;
+    height: 60px;
+    animation: left 60s infinite;
+}
+@keyframes left {
+    0% {
+        transform: translate(-150px)
+    }
+    100%{
+        transform: translate(380px)
+    }
+}
+.pagehome .clond-right {
+    position: absolute;
+    z-index: 100;
+    top: 410px;
+    right: -15px;
+}
+.pagehome .clond-right img{
+    width: 100px;
+    height: 50px;
+}
 .pagehome .frame {
     /* display: flex; */
     justify-content: center;
@@ -32,6 +59,25 @@
     color: #643A18;
     line-height: 22px;
 }
+.ani1{
+    animation: textAni 3s 1 ease-in-out;
+}
+.ani2{
+    animation: textAni 3s 1 ease-in-out;
+    animation-delay:2s
+}
+.ani3{
+    animation: textAni 3s 1 ease-in-out;
+    animation-delay:4s
+}
+@keyframes textAni {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 
 
 .li-info {
@@ -60,12 +106,18 @@
 .btn_call img{
     width: 224px;
     height: 100px;
+    animation: bounce-up 1.4s linear infinite;
 }
 .rich-god{
     position: relative;
     top: -30px;
     left: -20px;
 }
+@keyframes bounce-up {
+     25% {-webkit-transform: translateY(2px);}
+     50%, 100% {-webkit-transform: translateY(0);}
+     75% {-webkit-transform: translateY(-2px);}
+    }
 .rich-god img{
     width: 187px;
 }
