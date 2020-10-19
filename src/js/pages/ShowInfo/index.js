@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './infoStyle.css'
 import Images from '../../utils/Images'
 import html2canvas from 'html2canvas'
+import MyCanvas2Image from "../../utils/MyCanvas2Image";
 let myWidth = document.body.scrollWidth
 let myHeight = document.body.scrollHeight
 let phonewidth = window.screen.width
@@ -28,16 +29,26 @@ export default class ShowInfo extends Component {
         })
     }
     componentDidMount() {
-        // const imgurl  =canvas.toDataURL
-        // this.setState({
-        //     imgurl
-        // })
+        let that = this
+        let image = that.convertToImage(document.getElementById('showInfo'))
+        image.then((value, err) => {
+            that.setState({
+                newImage: value.src
+            })
+        })
         
+    }
+    convertToImage = (container, options = {}) => {
+        return html2canvas(container, options).then(canvas => {
+            const imageEl = MyCanvas2Image.convertToPNG(canvas, canvas.width, canvas.height);
+            return imageEl;
+        });
     }
   
   render() {
     return (
-      <div className='showInfo'>
+        this.state.newImage ? <img style={{width: myWidth, height: myHeight}} src={`${this.state.newImage}`}/> : 
+      <div className='showInfo' id='showInfo'>
           <div>奖二代身份证</div>
           <div className='info-container'>
              <div className='header-icon'>头像 <img src={this.state.headerIcon} alt=""/></div>

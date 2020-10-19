@@ -60,15 +60,17 @@
     line-height: 22px;
 }
 .ani1{
-    animation: textAni 3s 1 ease-in-out;
+    animation: textAni 2s 1 ease-in-out forwards;
 }
 .ani2{
-    animation: textAni 3s 1 ease-in-out;
-    animation-delay:2s
+    opacity: 0;
+    animation: textAni 2s 1 ease-in-out forwards;
+    animation-delay:1s
 }
 .ani3{
-    animation: textAni 3s 1 ease-in-out;
-    animation-delay:4s
+    opacity: 0;
+    animation: textAni 2s 1 ease-in-out forwards;
+    animation-delay:3s
 }
 @keyframes textAni {
     0% {

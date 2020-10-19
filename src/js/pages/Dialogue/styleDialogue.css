@@ -32,12 +32,43 @@
     top: 15px;
     left: -9px;
 }
+@keyframes chat-textAni {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+.chat-0{
+    animation: chat-textAni 2s 1 ease-in-out forwards;
+}
+.chat-1{
+    opacity: 0;
+    animation: chat-textAni 2s 1 ease-in-out forwards;
+    animation-delay:1s
+}
+.chat-2{
+    opacity: 0;
+    animation: chat-textAni 2s 1 ease-in-out forwards;
+    animation-delay:2s
+}
+.chat-3{
+    opacity: 0;
+    animation: chat-textAni 2s 1 ease-in-out forwards;
+    animation-delay:3s
+}
+.office-text{
+    color: #1F87F3;
+}
 .pointer {
-    
     position: absolute;
     bottom: 90px;
     left: 50%;
     margin-left: -21px;
+    opacity: 0;
+    animation: chat-textAni 2s 1 ease-in-out forwards;
+    animation-delay:4s
 }
 .pointer img{
     width: 42px;

@@ -8,3 +8,23 @@
     height: 50px;
     background: yellow;
 }
+.choose-sex-main{
+    display: flex;
+}
+.sex-man{
+    display: flex;
+    margin-left: 20px;
+}
+.choose-box{
+    width: 20px;
+    height: 20px;
+    border-radius:50%;
+    background: pink;
+}
+.choose-box-checked{
+    width: 10px;
+    height: 10px;
+    border-radius:50%;
+    border: 5px solid pink;
+    background: yellow;
+}

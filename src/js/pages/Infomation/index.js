@@ -4,10 +4,17 @@ import {Toast,Radio,List} from 'antd-mobile'
 const RadioItem = Radio.RadioItem
 export default class Infomation extends Component {
     state={
-
+        sexCheck : ''
+    }
+    componentWillMount(){
+        console.log(this.props.location)
+       let priceValue = this.props.location.priceValue
+       this.setState({
+          priceValue
+       })
     }
     componentDidMount(){
-        Toast.info('这里是天庭身份管理办事处，请填写你的申请资料表',5);
+        Toast.info('这里是天庭身份管理办事处，请填写你的申请资料表',1);
     }
     onChange(){}
     // 昵称
@@ -28,6 +35,13 @@ export default class Infomation extends Component {
     showInfo =()=>{
         this.props.history.push('/showInfo');
     }
+    changeSex=(tip,e)=>{
+      let sex = tip
+      let value = e.target.value
+      this.setState({
+          sex 
+      })
+    }
   render() {
     return (
       <div className='infomation'>
@@ -37,15 +51,17 @@ export default class Infomation extends Component {
                  想一个暴富以后的昵称<input type="text"  onChange={this.changeName}/>
              </div>
              <div>
-                 性别 
-                 <List>
-                    <RadioItem checked={true} onChange={() => this.onChange('man')}>
-                       男
-                    </RadioItem>
-                    <RadioItem checked={false} onChange={() => this.onChange('man')}>
-                       女
-                    </RadioItem>
-                </List>
+                 <div>性别：</div>
+                 <div className='choose-sex-main'>
+                    <div className='sex-man' onClick={this.changeSex.bind(this,'man')}>
+                       <div className={this.state.sex == 'man' ? 'choose-box-checked' : 'choose-box'}></div>
+                       <div className='choose-sex'>男</div>
+                    </div>
+                    <div className='sex-man' onClick={this.changeSex.bind(this,'woman')}>
+                       <div  className={this.state.sex == 'woman' ? 'choose-box-checked' : 'choose-box'}></div>
+                       <div className='choose-sex'>女</div>
+                    </div>
+                 </div>
              </div>
              <div>
                  中奖后想实现的第一个愿望（8字以内）
