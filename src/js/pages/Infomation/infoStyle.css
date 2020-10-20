@@ -1,30 +1,86 @@
-.infomation{
-    position: relative;
-}
-.footer{
-    position: fixed;
-    bottom: 0;
+.infomation {
     width: 100%;
+    height: 100%;
+    position: relative;
+    background: url('../../../assets/bg_office_2x.jpg');
+    background-size: 100%;
+    display: flex;
+    justify-content: center;
+
+    font-family: 'NokiaFontYanTi';
+}
+
+.infoContainer {
+    position: absolute;
+    width: 280px;
+    top: 155px;
+}
+
+.info-title {
+    font-size: 20px;
+    color: #F18300;
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.infomation-main {
+    color: #A67F5E;
+    /* position: absolute; */
+}
+
+.infomation-main .name-input {
+    width: 100%;
+    height: 35px;
+    background: #FCF6E2;
+    border: none;
+    outline: none;
+    margin-top: 8px;
+    margin-bottom: 22px;
+    border-radius: 3px;
+    font-family: 'NokiaFontYanTi';
+    color: #EF3A39;
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 22px;
+}
+.footer img{
+    width: 134px;
     height: 50px;
-    background: yellow;
 }
-.choose-sex-main{
+
+.choose-sex-main {
     display: flex;
+    align-items: center;
+    height: 35px;
+    margin-top: 8px;
+    margin-bottom: 22px;
 }
-.sex-man{
+
+.sex-man {
     display: flex;
-    margin-left: 20px;
+    /* margin-left: 20px; */
 }
-.choose-box{
+
+.choose-sex {
+    margin-left: 12px;
+    margin-right: 70px;
+}
+
+.choose-box {
     width: 20px;
     height: 20px;
-    border-radius:50%;
-    background: pink;
+    border-radius: 50%;
+    background: white;
 }
-.choose-box-checked{
+
+.choose-box-checked {
     width: 10px;
     height: 10px;
-    border-radius:50%;
-    border: 5px solid pink;
-    background: yellow;
+    border-radius: 50%;
+    border: 5px solid white;
+    background: #FD4343;
 }
