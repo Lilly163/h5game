@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import './styleDialogue.css'
 import Images from '../../utils/Images'
-import { spawn } from 'child_process';
 const chatList = [
     {id:'1',value:'你好，我是财神'},
     {id:'2',value:'感谢互联网技术和5G'},

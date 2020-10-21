@@ -8,6 +8,7 @@ import clond_left from "../../assets/clond_left_2x.png";
 import clond_right from "../../assets/clond_right_2x.png";
 import officeBtn from "../../assets/office_btn_2x.png";
 import loginBtn from "../../assets/go-login-btn-2x.png";
+import office_bg from "../../assets/bg_office_2x.jpg";
 
 import man1 from "../../assets/man1@2x.png";
 import man2 from "../../assets/man2@2x.png";
@@ -30,6 +31,7 @@ export default {
     officeBtn,
     loginBtn,
     man1,man2,man3,
-    woman1,woman2,woman3
+    woman1,woman2,woman3,
+    office_bg
 
 }

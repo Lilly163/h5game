@@ -14,15 +14,12 @@
 .pagehome .clond-left img{
     width: 130px;
     height: 60px;
-    animation: left 60s infinite;
+    animation: left 1.4s linear infinite;
 }
 @keyframes left {
-    0% {
-        transform: translate(-150px)
-    }
-    100%{
-        transform: translate(380px)
-    }
+    25% {-webkit-transform: translateY(2px);}
+    50%, 100% {-webkit-transform: translateY(0);}
+    75% {-webkit-transform: translateY(-2px);}
 }
 .pagehome .clond-right {
     position: absolute;
@@ -33,6 +30,7 @@
 .pagehome .clond-right img{
     width: 100px;
     height: 50px;
+    animation: left 1.4s linear infinite;
 }
 .pagehome .frame {
     /* display: flex; */

@@ -1,7 +1,8 @@
 .showInfo {
     width: 100%;
     height: 100%;
-    background: url('../../../assets/bg_showInfo_2x.jpg');
+    background: url('../../../assets/bg_showInfo_2x.jpg') no-repeat;
+    background-color: #E00D2C;
     background-size: 100%;
 }
 
@@ -42,8 +43,8 @@
 }
 
 .header-icon img {
-    width: 65px;
-    height: 75px;
+    width: 80px;
+    height: 100px;
 }
 
 .showInfo_main {
@@ -63,12 +64,12 @@
 }
 
 .red-ball {
-    color: red;
+    color: #EF3A39;
     margin-right: 10px;
 }
 
 .blue-ball {
-    color: blue;
+    color: #2374F7;
     margin-right: 10px;
 }
 
@@ -100,6 +101,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: 'NokiaFontYanTi';
 }
 
 .showInfo_footer .go_login {

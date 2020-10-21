@@ -6,16 +6,20 @@ const RadioItem = Radio.RadioItem;
 export default class Infomation extends Component {
   state = {
     sexCheck: '',
+    nickName: '',
+    dream:'',
+    sex: ''
   };
   componentWillMount () {
-    console.log (this.props.location);
     let priceValue = this.props.location.priceValue;
     this.setState ({
       priceValue,
     });
   }
   componentDidMount () {
-    Toast.info ('这里是天庭身份管理办事处，请填写你的申请资料表', 1);
+    setTimeout(()=>{
+      document.querySelector('.modal').style.display = 'none'
+    },2500)
   }
   onChange () {}
   // 昵称
@@ -25,16 +29,41 @@ export default class Infomation extends Component {
       nickName,
     });
   };
-  // 梦想
-  changeDream = e => {
-    let mydream = e.target.value;
-    this.setState ({
-      mydream,
-    });
-  };
   // 生成身份
   showInfo = () => {
-    this.props.history.push ('/showInfo');
+    let {nickName,sex,dream} = this.state
+    if(!nickName){
+       Toast.info('请填写昵称哦')
+       return ;
+    }
+    if(!sex){
+       Toast.info('请选择性别')
+       return ;
+    }
+    if(!dream){
+       Toast.info('请填写愿望哦')
+       return ;
+    }
+    this.props.history.push({
+     pathname: "/showInfo",
+     state: {
+       nickName: this.state.nickName,
+       dream:this.state.dream,
+       sex: this.state.sex
+      }
+ })
+  };
+  changeName = ( e) => {
+    let nickName = e.target.value;
+    this.setState ({
+      nickName,
+    });
+  };
+  changeDream = ( e) => {
+    let dream = e.target.value;
+    this.setState ({
+      dream,
+    });
   };
   changeSex = (tip, e) => {
     let sex = tip;
@@ -46,13 +75,20 @@ export default class Infomation extends Component {
   render () {
     return (
       <div className="infomation">
+       <div className='modal'>
+          <div className='modal-text'>
+              <div style={{color:'#F18300'}}>您好!</div>
+              <div className='middle'>这里是天庭身份管理办事处，请开始填写你的《身份申请资料表》。</div>
+              <div>祝好运!</div>
+          </div>
+       </div>
         <div className="infoContainer">
 
           <div className='info-title'>身份申请资料表</div>
           <div className="infomation-main">
             <div>
               想一个暴富以后的昵称：
-              <input className='name-input' type="text" onChange={this.changeName} />
+              <input className='name-input' type="text" maxLength={8} onChange={this.changeName} />
             </div>
             <div>
               <div>性别：</div>
@@ -87,9 +123,9 @@ export default class Infomation extends Component {
             </div>
             <div>
               中奖后想实现的第一个愿望（8字以内）：
-              <input  className='name-input' type="text" onChange={this.changeDream} />
+              <input  className='name-input' type="text" maxLength={8} onChange={this.changeDream} />
             </div>
-            <div class='footer' onClick={this.showInfo}>
+            <div className='footer' onClick={this.showInfo}>
             <img src={Images.officeBtn} alt=""/>
          </div> 
           </div>

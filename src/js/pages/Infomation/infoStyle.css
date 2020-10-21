@@ -2,12 +2,39 @@
     width: 100%;
     height: 100%;
     position: relative;
-    background: url('../../../assets/bg_office_2x.jpg');
+    background: url('../../../assets/show_idcard_bg_beifen.jpg');
+    background: url('../../../assets/bg_office_2x.jpg') no-repeat;
     background-size: 100%;
     display: flex;
     justify-content: center;
 
     font-family: 'NokiaFontYanTi';
+}
+.modal{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 999;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal-text{
+    background: url('../../../assets/office_rules_bg2x.png');
+    background-size: 100%;
+    width: 290px;
+    /* background: white; */
+    box-sizing: border-box;
+    font-size: 20px;
+/* color: #6C4A2D; */
+line-height: 29px;
+padding: 32px 23px;
+
+}
+.modal-text .middle {
+   margin-top: 23px;
+   margin-bottom: 20px;
 }
 
 .infoContainer {
